@@ -75,6 +75,9 @@
 - **Level 18**
   + ssh -i bandit17key bandit17@bandit.labs.overthewire.org -p 2220
  + diff file1 and file 2
--**Level 19**
+- **Level 19**
    + ssh bandit18@bandit.labs.overthewire.org -p 2220 bash --noprofile
    + this one had a .bashrc file that was modifed to log you out automatically. ran with no profile allowed you to work around that. perhaps -norc would work as well
+**Level 20**
+	+ familirization with setuid binary
+ 	+ ran /bandit20-do cat /etc/bandit_pass/bandit20 to get pass
