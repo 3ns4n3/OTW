@@ -60,3 +60,21 @@
 	- cat /etc/bandit_pass/bandit14 
 	- MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 - **Level 15**
+- I dont remember what this was.. think just a netcat listener
+- **Level 16**
+  + submit password of 15 over ssl to port 3001
+  + used follow command openssl s_client -connect localhost:30001
+  + then it waited for me to paste the flag
+- **Level 17**
+  + scan for open ports on local host
+  + nmap -p 31000-32000
+  + 5 came back as up
+  + reran nmap -script ssl-enum-ciphers and rest of previous command 2 came back with cipers
+  + run openssl s_client -quiet -connect localhost:port otherwise it wont work for this one..
+  + responded with a private key.
+- **Level 18**
+  + ssh -i bandit17key bandit17@bandit.labs.overthewire.org -p 2220
+ + diff file1 and file 2
+-**Level 19**
+   + ssh bandit18@bandit.labs.overthewire.org -p 2220 bash --noprofile
+   + this one had a .bashrc file that was modifed to log you out automatically. ran with no profile allowed you to work around that. perhaps -norc would work as well
