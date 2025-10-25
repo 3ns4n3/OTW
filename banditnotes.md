@@ -123,3 +123,30 @@ cat response.txt | nc localhost 30002 > results.txt
 		Port 2220
 	+ ran git clone ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo and had no problems
 - **Level 28**
+  + same steps as before honestly... until we get to the README.md
+  + using command git log we see other log commits
+  + git show on the interesting hash commit
+  + profit
+- **Level 29**
+  + same before
+  + this time we dont have everything we want
+  + git branch -a will show other branchs
+  + there is a dev branch so we run git checkout dev
+  + in here is the orginal readme.. readit and profit
+- **Level 30**
+  + more git...
+  + shows empty file
+  + we run a command git tag that shows important points in history
+  + git show secret
+  + profit
+- **Level 31**
+  + more git again
+  + this one we have to push a notice
+  + echo the content into a file
+  + delete the gitignore or -f to force
+  +  git add -f key.txt
+  +  git commit -m "put a comment here"
+  +  git push -u origin master for flag
+- **Level 32**
+  + greeted with welcome to uppercase shell
+  + hit em eith $0 and it worked..
