@@ -78,17 +78,17 @@
 - **Level 19**
    + ssh bandit18@bandit.labs.overthewire.org -p 2220 bash --noprofile
    + this one had a .bashrc file that was modifed to log you out automatically. ran with no profile allowed you to work around that. perhaps -norc would work as well
-**Level 20**
+- **Level 20**
 	+ familirization with setuid binary
  	+ ran /bandit20-do cat /etc/bandit_pass/bandit20 to get pass
-**Level 21**
+- **Level 21**
 	+ had to run setuid binay to figure what it did
  + echo old password into a nc listener and put it in the background
-**Level22**
+- **Level22**
 + check cronjobs.. see script. Cat script profit$$
-**Level 23**
+- **Level 23**
 + find script read it... run part of the script use that for your target
-** Level 24 **
+- **Level 24**
   + we must first make a temp dir
   + mktmp -d
   + cd there and make script
@@ -103,5 +103,23 @@ do
 
 done
 
-
 cat response.txt | nc localhost 30002 > results.txt
+
+- **Level 25**
+  + We need to determine the shell that bandit26 ueses
+  + cat /etc/passwd/ and grep bandit26 to see it is using the /usr/bin/showtext shell...
+  + lets read that.. its written in #!/bin/sh and is using  more ~/text.txt
+  + this one has to be logged into with a TINY terminal so MORE wont be displayed all the way, when logged in use -v to get into vim
+  + now we can use vim do some things we want
+  + :shell will set us in the defualt shell :set shell /bin/bash will put us in bash
+  + use the setgid script to read /etc/bandit_pass/bandit27
+- **Level 27**
+	+ need to git over ssh it seems
+	+ to do this we have to modify the ssh config file under ~/.ssh/config
+	+ I didnt have one so I made one. inside I needed to specify the host and port
+	+ Host bandit.labs.overthewire.org
+		Port 2220
+		Host *
+		Port 2220
+	+ ran git clone ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo and had no problems
+- **Level 28**
